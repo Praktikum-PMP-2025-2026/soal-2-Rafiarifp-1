@@ -107,7 +107,6 @@ int main(){
     struct Gerbong *head3 = NULL; 
 
     // List 1
-    printf("Jumlah elemen: ");
     scanf("%d",&n);
     for(i=0;i<n;i++){
         scanf("%d", &id);
@@ -116,7 +115,6 @@ int main(){
     bubbleSort(head1);
 
     // List 2
-    printf("Jumlah elemen: ");
     scanf("%d",&n);
     for(i=0;i<n;i++){
         scanf("%d", &id);
