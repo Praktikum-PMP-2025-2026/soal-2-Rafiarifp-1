@@ -60,7 +60,7 @@ void swap(struct Gerbong *a, struct Gerbong *b)
 
 void printList(struct Gerbong *start){ 
     struct Gerbong *temp = start; 
-    printf("MERGE "); 
+    printf("MERGED "); 
     while (temp!=NULL) 
     { 
         printf("%d ", temp->id); 
