@@ -1,3 +1,12 @@
+/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2024/2025
+ *   Modul               : 4
+ *   Hari dan Tanggal    : Senin, 4 Mei 2026
+ *   Nama (NIM)          : Rafi Arif Putra (13224033)
+ *   Nama File           : soal2.c
+ *   Deskripsi           : Fungsi yang menyortir dua linked list dari kecil ke besar, lalu menggabungkan kedua list menjadi sebuah list yang juga tersortir dari kecil ke besar
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,7 +27,7 @@ void addGerbong(struct Gerbong **head, int id){
     Gerbong* newGerbong = (Gerbong*)malloc(sizeof(Gerbong));
     newGerbong->id = id;
     
-    // Append di head
+    // Append at head
     newGerbong->next = *head;
     *head = newGerbong;
 } 
@@ -28,7 +37,6 @@ void bubbleSort(struct Gerbong *head){
     struct Gerbong *ptr1; 
     struct Gerbong *lptr = NULL; 
 
-    /* Checking for empty list */
     if (head == NULL) 
         return; 
 
@@ -61,6 +69,9 @@ void swap(struct Gerbong *a, struct Gerbong *b)
 void printList(struct Gerbong *start){ 
     struct Gerbong *temp = start; 
     printf("MERGED "); 
+    if (temp == NULL){
+        printf("EMPTY");
+    }
     while (temp!=NULL) 
     { 
         printf("%d ", temp->id); 
@@ -80,7 +91,6 @@ struct Gerbong* mergeList(struct Gerbong* head1, struct Gerbong* head2) {
     struct Gerbong* dummy = createGerbong(-1);
     struct Gerbong* curr = dummy;
 
-    // Iterate through both linked lists
     while (head1 != NULL && head2 != NULL) {
         if (head1->id <= head2->id) {
             curr->next = head1;
